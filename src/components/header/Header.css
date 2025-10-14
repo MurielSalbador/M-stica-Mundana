@@ -1,0 +1,239 @@
+/* ==== RESET BÁSICO ==== */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+}
+
+.header.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center; /* 🔹 Centra verticalmente todo */
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  font-weight: 600;
+  color: #4a3a28;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+/* ==== LINKS ==== */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  align-items: center; /* 🔹 Centra verticalmente los enlaces */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #4a3a28;
+}
+
+/* ==== DROPDOWN ==== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 10px 0;
+  min-width: 200px;
+  animation: fadeIn 0.2s ease-in-out;
+  z-index: 2000;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  color: #3c8b5b;
+  background: #f4f8f5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== LOGIN Y REDES (DESKTOP) ==== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-btn {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons i {
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #3c8b5b;
+}
+
+/* ==== HAMBURGER ==== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación al abrir */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ==== MOBILE MENU ==== */
+@media (max-width: 850px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 320px;
+    background: #fff;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1500;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  .nav-right {
+    display: none; /* Oculta login/redes desktop */
+  }
+
+  /* Menú desplegable móvil */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .dropdown-menu li {
+    padding: 8px 0;
+  }
+
+  /* Login y redes dentro del menú móvil */
+  .mobile-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    gap: 12px;
+  }
+
+  .mobile-login .social-icons {
+    gap: 12px;
+  }
+
+  .mobile-login .social-icons i {
+    font-size: 18px;
+  }
+}
+
+/* ==== OPTIMIZACIÓN VISUAL PEQUEÑOS ==== */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .mobile-login {
+    margin-top: 25px;
+  }
+}

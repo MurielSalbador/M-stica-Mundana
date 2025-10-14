@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Quicksand:wght@300;400;500&display=swap');
+
+/* GENERAL */
+.home {
+  width: 100%;
+  font-family: "Cormorant Garamond", serif;
+  color: #3a2e1f;
+  background: linear-gradient(to bottom, #fdfaf6 0%, #f4efe8 100%);
+  overflow-x: hidden; /* Evita desplazamiento horizontal */
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  text-align: center;
+  padding: 60px;
+  border-radius: 8px;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #3a2e1f;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.hero-logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #604f3c;
+  text-shadow: 0 2px 6px rgba(255,255,255,0.4);
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-weight: 300;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 40px;
+}
+
+/* BOTÓN MÍSTICA */
+.btn-mistica {
+  position: relative;
+  border: none;
+  padding: 20px 43px;
+  border-radius: 40px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(90, 80, 50, 0.3);
+  background: linear-gradient(135deg, #d4c2a6, #bba782);
+  transition: all 0.4s ease, box-shadow 0.4s ease;
+}
+
+.btn-mistica:hover {
+  background: linear-gradient(135deg, #c8b58e, #a59574);
+  box-shadow: 0 0 20px rgba(180, 160, 120, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+/* ABOUT SECTION */
+
+.about-title {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 90px;
+  color: #4a3a28;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+   font-family: "Cormorant Garamond", serif;
+}
+.about {
+  background: #faf8f4;
+  padding: 100px 20px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-image img {
+  margin-top: 90px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  height: auto;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-name{
+     font-size: 2rem;
+     margin-top: 40px;
+  color: #4a3a28;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-family: "Quicksand", sans-serif;
+  color: #4d463d;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 18px 24px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+/* BLOQUES */
+.text-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 100px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 22px 48px;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 115%;
+  transform: translateX(-7%);
+  backdrop-filter: blur(4px);
+}
+
+.text-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.text-block img {
+  width: 60px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.text-block img:hover {
+  opacity: 1;
+}
+
+.text-block p {
+  flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4d463d;
+  margin: 0;
+}
+
+
+
+/* DESTELLOS */
+.destello {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 240, 0.8);
+  box-shadow: 0 0 8px rgba(255, 255, 220, 0.7);
+  animation: brilla 4s ease-in-out infinite;
+}
+
+.destello1 { top: 20%; left: 10%; animation-delay: 1s; }
+.destello2 { bottom: 20%; right: 15%; animation-delay: 2s; }
+
+@keyframes brilla {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* PUNTOS FLOTANTES */
+.petal {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #daad72 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(-50px) translateX(30px) rotate(180deg); opacity: 0.5; }
+  100% { transform: translateY(0) translateX(0) rotate(360deg); opacity: 0.8; }
+}
+
+/* SÍMBOLOS */
+.symbol {
+  display: block;
+  margin: 30px auto;
+  width: 40px;
+  opacity: 0;
+  transform: translateY(10px);
+  filter: drop-shadow(0 0 2px rgba(120, 90, 60, 0.2));
+  transition: all 0.8s ease-in-out;
+}
+
+.symbol.aos-animate {
+  opacity: 0.6;
+  transform: translateY(0);
+  animation: float 6s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+/* ===================== */
+/* 🔹 RESPONSIVE DESIGN 🔹 */
+/* ===================== */
+
+/* Tablets horizontales (<=1100px) */
+@media (max-width: 1100px) {
+  .text-block {
+    width: 100%;
+    transform: none;
+    padding: 28px 36px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .about-text h2 {
+    text-align: center;
+  }
+
+  .text-block {
+    width: 100%;           /* 🔹 Evita que se salga de pantalla */
+    transform: none;       /* 🔹 Centra correctamente */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    margin-bottom: 60px;
+    padding: 24px 20px;
+  }
+
+  .text-block img {
+    margin: 0 auto;
+    width: 50px;
+  }
+}
+
+/* Móviles pequeños (<=480px) */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .about-text {
+    max-width: 92%;
+    margin: 0 auto;
+  }
+
+  .text-block {
+    width: 100%;          /* 🔹 Totalmente centrado */
+    transform: none;      /* 🔹 Sin desplazamiento */
+    padding: 20px 12px;
+    gap: 18px;
+    margin-bottom: 40px;
+    
+  }
+
+  .text-block p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-name{
+         font-size: 2rem;
+         margin-top: 30px;
+  }
+
+  .about-title{
+         font-size: 2.5rem;
+         margin-bottom: 90px;
+  }
+
+  .btn-mistica {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+}
