@@ -9,9 +9,9 @@ import fotoMica from "../../assets/micaela.jpg";
 const Home = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1200, 
+      duration: 1200,
       easing: "ease-in-out",
-      once: true, 
+      once: true,
     });
   }, []);
 
@@ -47,15 +47,12 @@ const Home = () => {
         </div>
       </section>
 
-      
-
       {/* DESCRIPCIÓN MICAELA */}
       <section className="about">
+        <h2 className="about-title" data-aos="fade-left">
+          Mi esencia
+        </h2>
 
-         <h2 className="about-title" data-aos="fade-left">
-              Mi esencia
-            </h2>
-        
         <div className="about-container">
           <div className="about-image" data-aos="fade-right">
             <img src={fotoMica} alt="Micaela" />
@@ -107,13 +104,28 @@ const Home = () => {
 
               <p>
                 Siento que los aprendizajes más valiosos son los que me trajo la{" "}
-                <strong>vida</strong> a través de sus experiencias, que me
-                enseñaron que todo conocimiento debe ser{" "}
+                <strong>vida</strong> a través de sus experiencias. Me enseñaron
+                que todo conocimiento debe ser{" "}
                 <strong>integrado en el cuerpo</strong> para transformarse en{" "}
                 <strong>sabiduría</strong>.
                 <br />
                 El lugar más respetuoso para compartir mis saberes es el de{" "}
                 <strong>acompañar y guiar</strong>.
+                <br />
+                El <strong>
+                  movimiento, el cambio y la muerte simbólica
+                </strong>{" "}
+                son parte de toda vida; aceptar y flexibilizar la mente es
+                esencial.
+                <br />
+                La <strong>compasión</strong> y la <strong>humildad</strong> son
+                bases de todo camino consciente, y aprender a ser nuestro propio{" "}
+                <strong>hogar</strong> es una verdadera{" "}
+                <strong>revolución interna</strong>.
+                <br />
+                Porque al hacerlo, recuperamos nuestro estado natural: el{" "}
+                <strong>amor</strong>, y aprendemos a ver la vida a través de
+                él.
               </p>
             </div>
           </div>
