@@ -50,7 +50,7 @@ const Home = () => {
       {/* DESCRIPCIÓN MICAELA */}
       <section className="about">
         <h2 className="about-title" data-aos="fade-left">
-          Mi esencia
+          Mi camino
         </h2>
 
         <div className="about-container">
@@ -61,74 +61,55 @@ const Home = () => {
             </h2>
           </div>
           <div className="about-text">
-            <div className="text-block" data-aos="fade-up" data-aos-delay="100">
-              <img
-                src="https://static.thenounproject.com/png/luna-moth-icon-41785-512.png"
-                alt="Polilla Luna"
-              />
-              <p>
-                Mi camino está guiado por la <strong>autoconsciencia</strong> y
-                la <strong>compasión</strong>, en un proceso de{" "}
-                <strong>autoconocimiento</strong> y conexión con los{" "}
-                <strong>aspectos sutiles del ser</strong>. Ser guía y compañía
-                en este recorrido es mi <strong>propósito</strong>, y{" "}
-                <strong>recuperar la intuición</strong> es la intención que me
-                impulsa a compartir mis herramientas. Deseo que podamos{" "}
-                <strong>reconocernos como hogar</strong>, volver al{" "}
-                <strong>estado interno de amor</strong> y transitar la vida
-                desde un lugar <strong>amoroso y trascendente</strong>.
-              </p>
-            </div>
+  <div className="text-block" data-aos="fade-up" data-aos-delay="100">
+    <img
+      src="https://static.thenounproject.com/png/luna-moth-icon-41785-512.png"
+      alt="Polilla Luna"
+    />
+    <p>
+      <strong>Autoconsciencia</strong> y <strong>compasión</strong> acompañan mi camino de autoconocimiento y formación en los aspectos sutiles de nuestro ser.
+    
+      Ser <strong>guía</strong> y <strong>compañía</strong> de quienes eligen este sendero es el propósito de mi camino.  
+      La recuperación de nuestra <strong>intuición</strong> es la intención que me guía al compartir mis herramientas.
 
-            <div className="text-block" data-aos="fade-up" data-aos-delay="300">
-              <img
-                src="https://static.thenounproject.com/png/moon-phases-icon-3292573-512.png"
-                alt="Fases de la Luna"
-              />
+      <strong>Reconocernos como hogar</strong>, recuperar el estado interno originario de amor y sabernos capaces de transitar esta experiencia desde un lugar <strong>amoroso y trascendente</strong>, es mi deseo más profundo.
+    </p>
+  </div>
 
-              <p>
-                Camino a través de herramientas que fueron las bases sobre las
-                cuales me conocí (y aún continuo haciéndolo). Me acompañan la{" "}
-                <strong>meditación</strong>, la <strong>filosofía</strong>, el{" "}
-                <strong>dharma yoga</strong>, la{" "}
-                <strong>cosmovisión matrística</strong> y la{" "}
-                <strong>escritura medicina</strong>.
-              </p>
-            </div>
+  <div className="text-block" data-aos="fade-up" data-aos-delay="300">
+    <img
+      src="https://static.thenounproject.com/png/moon-phases-icon-3292573-512.png"
+      alt="Fases de la Luna"
+    />
+    <p>
+      Camino a través de herramientas que fueron las bases sobre las cuales me conocí —y aún continúo haciéndolo—.
+    
+      Me acompañan la <strong>meditación</strong>, la <strong>filosofía</strong>, el <strong>dharma yoga</strong>, la <strong>cosmovisión matrística</strong> y la <strong>escritura medicina</strong>.
+    
+      Más allá de todo, siento que los aprendizajes más valiosos son los que me trajo la <strong>vida</strong> a través de sus experiencias.
+    </p>
+  </div>
 
-            <div className="text-block" data-aos="fade-up" data-aos-delay="500">
-              <img
-                src="https://static.thenounproject.com/png/yoga-icon-7742509-512.png"
-                alt="Yoga"
-              />
-
-              <p>
-                Siento que los aprendizajes más valiosos son los que me trajo la{" "}
-                <strong>vida</strong> a través de sus experiencias. Me enseñaron
-                que todo conocimiento debe ser{" "}
-                <strong>integrado en el cuerpo</strong> para transformarse en{" "}
-                <strong>sabiduría</strong>.
-                <br />
-                El lugar más respetuoso para compartir mis saberes es el de{" "}
-                <strong>acompañar y guiar</strong>.
-                <br />
-                El <strong>
-                  movimiento, el cambio y la muerte simbólica
-                </strong>{" "}
-                son parte de toda vida; aceptar y flexibilizar la mente es
-                esencial.
-                <br />
-                La <strong>compasión</strong> y la <strong>humildad</strong> son
-                bases de todo camino consciente, y aprender a ser nuestro propio{" "}
-                <strong>hogar</strong> es una verdadera{" "}
-                <strong>revolución interna</strong>.
-                <br />
-                Porque al hacerlo, recuperamos nuestro estado natural: el{" "}
-                <strong>amor</strong>, y aprendemos a ver la vida a través de
-                él.
-              </p>
-            </div>
-          </div>
+  <div className="text-block" data-aos="fade-up" data-aos-delay="500">
+    <img
+      src="https://static.thenounproject.com/png/yoga-icon-7742509-512.png"
+      alt="Yoga"
+    />
+    <p>
+      Me enseñaron que todo conocimiento debe ser <strong>integrado en el cuerpo</strong> para transformarse en <strong>sabiduría</strong>.
+   
+      El lugar más respetuoso para compartir mis saberes es el de <strong>acompañar y guiar</strong>.
+    
+      El <strong>movimiento</strong>, el <strong>cambio</strong> y la <strong>muerte simbólica</strong> son partes innatas de todos los procesos de vida; aceptar y flexibilizar nuestra mente es esencial.
+    
+      La <strong>compasión</strong> y la <strong>humildad</strong> son bases para un camino de consciencia.
+    
+      Aprender a ser nuestro propio <strong>hogar</strong> es una <strong>revolución interna</strong>, porque nos hace soberanos de nuestro estado interno.
+    
+      Así recuperamos el estado natural de nuestro ser: el <strong>amor</strong>, y aprendemos a ver la vida a través de él.
+    </p>
+  </div>
+</div>
         </div>
       </section>
     </div>
