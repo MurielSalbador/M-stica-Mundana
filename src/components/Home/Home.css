@@ -241,13 +241,217 @@
 }
 
 
+/* ===================== */
+/*      COURSES SECTION  */
+/* ===================== */
+
+.courses {
+  padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: #e6d3ae;
+  border-radius: 5%;
+  
+}
+
+.courses::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: 10%;
+  left: -100px;
+  filter: blur(40px);
+  
+}
+
+.courses::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  bottom: 10%;
+  right: -100px;
+  filter: blur(40px);
+}
+
+.courses-title {
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #4a3a28;
+  letter-spacing: 1px;
+  margin-bottom: 100px;
+  font-family: "Cormorant Garamond", serif;
+  position: relative;
+}
+
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.course-card {
+  width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column !important; /* fuerza columna aunque tu JSX tenga left/right */
+}
+
+.course-image-wrapper,
+.course-info {
+  flex: 1;
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.course-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 0;
+  opacity: 0.7;
+}
 
 
 
+.course-card.left .course-info {
+  order: 1;
+}
+.course-card.left .course-image-wrapper {
+  order: 2;
+}
 
+.course-card.right .course-info {
+  order: 2;
+  text-align: right;
+}
+.course-card.right .course-image-wrapper {
+  order: 1;
+}
+
+.course-info {
+  padding: 25px 20px 35px;
+  background: #fff;
+}
+
+.course-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #3a2e1f;
+}
+
+.course-info p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.95rem;
+  color: #5c5144;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.course-info button {
+  background: transparent;
+  border: 1.5px solid #3a2e1f;
+  padding: 10px 26px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.course-info button:hover {
+  background: #3a2e1f;
+  color: #fff;
+}
+
+.course-image-wrapper {
+  height: 220px;
+  overflow: hidden;
+}
+
+.course-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.course-card:hover .course-image-wrapper img {
+  transform: scale(1.05);
+}
+/* Decoraciones detrás de la imagen */
+.course-image-wrapper::before,
+.course-image-wrapper::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.25;
+}
+
+.course-image-wrapper::before {
+  width: 160px;
+  height: 160px;
+  top: -60px;
+  left: -40px;
+  filter: blur(10px);
+  animation: floatGlow 10s ease-in-out infinite;
+}
+
+
+/* mantiene márgenes uniformes */
+.course-card.left .course-info,
+.course-card.right .course-info {
+  text-align: left;
+}
+.course-card:hover .course-image-wrapper img {
+  transform: scale(1.05);
+}
+
+
+
+@keyframes floatMoon {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+.courses::before,
+.courses::after,
+.course-card::before,
+.course-image-wrapper::before,
+.course-image-wrapper::after {
+  pointer-events: none;
+}
 
 /* ===================== */
-/* 🔹 RESPONSIVE DESIGN 🔹 */
+/*   RESPONSIVE DESIGN   */
 /* ===================== */
 
 /* Tablets horizontales (<=1100px) */
@@ -292,8 +496,8 @@
   }
 
   .text-block {
-    width: 100%;           /* 🔹 Evita que se salga de pantalla */
-    transform: none;       /* 🔹 Centra correctamente */
+    width: 100%;           
+    transform: none;       
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -332,8 +536,8 @@
   }
 
   .text-block {
-    width: 100%;          /* 🔹 Totalmente centrado */
-    transform: none;      /* 🔹 Sin desplazamiento */
+    width: 100%;          
+    transform: none;      
     padding: 20px 12px;
     gap: 18px;
     margin-bottom: 40px;
@@ -358,5 +562,9 @@
   .btn-mistica {
     font-size: 1rem;
     padding: 12px 28px;
+  }
+
+  .courses{
+    border-radius: 0%;
   }
 }

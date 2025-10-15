@@ -1,18 +1,43 @@
 import "./Home.css";
 import "aos/dist/aos.css"; // Importa los estilos de AOS
 import AOS from "aos";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
+import { supabase } from "../../../../MisticayMundan_Server/supabaseClient";
+import { useNavigate } from "react-router-dom";
+
 
 import LogoCaracol from "../../assets/LogoCaracol.png";
 import fotoMica from "../../assets/micaela.jpg";
 
 const Home = () => {
+    const [courses, setCourses] = useState([]);
+const navigate = useNavigate();
+
+
+
+useEffect(() => {
+  const fetchCourses = async () => {
+    const { data, error } = await supabase.from("courses").select("*");
+    if (error) {
+      console.error(error);
+    } else {
+      setCourses(data);
+    }
+
+console.log("Error:", error);
+console.log("Data:", data);
+  };
+
+  fetchCourses();
+}, []);
   useEffect(() => {
     AOS.init({
       duration: 1200,
       easing: "ease-in-out",
       once: true,
     });
+    console.log("✅ AOS inicializado");
   }, []);
 
   return (
@@ -112,6 +137,33 @@ const Home = () => {
 </div>
         </div>
       </section>
+
+      <section className="courses" data-aos="fade-up">
+  <h2 className="courses-title">Cursos online</h2>
+  <div className="courses-container">
+    {courses.map((course, index) => (
+      <div
+        key={course.id}
+        className={`course-card ${index % 2 === 0 ? "left" : "right"}`}
+        data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+      >
+        <div className="course-image-wrapper">
+          <img src={course.image_url} alt={course.title} />
+        </div>
+
+        <div className="course-info">
+          <h3>{course.title}</h3>
+          <p>{course.description}</p>
+          <button onClick={() => navigate(`/curso/${course.id}`)}>
+            Más info
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
     </div>
   );
 };
