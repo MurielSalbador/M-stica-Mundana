@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "../../../../../MisticayMundan_Server/supabaseClient";
+import { supabase } from "../../../../supabaseClient";
 import YogaLogin from "../../../assets/YogaLogin.jpg";
 import { Link, useNavigate, useLocation} from "react-router-dom";
 import { useAuthStore } from "../../../store/useAuthStore";

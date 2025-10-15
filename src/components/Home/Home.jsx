@@ -3,7 +3,7 @@ import "aos/dist/aos.css"; // Importa los estilos de AOS
 import AOS from "aos";
 
 import { useEffect, useState } from "react";
-import { supabase } from "../../../../MisticayMundan_Server/supabaseClient";
+import { supabase } from "../../../supabaseClient";
 import { useNavigate } from "react-router-dom";
 
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { supabase } from "../../../../../MisticayMundan_Server/supabaseClient";
+import { supabase } from "../../../../supabaseClient";
 import YogaRegister from "../../../assets/YogaRegister.jpeg";
 import "../auth.css";
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { supabase } from "../../../../MisticayMundan_Server/supabaseClient";
+import { supabase } from "../../../supabaseClient";
 import { useAuthStore } from "../../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";

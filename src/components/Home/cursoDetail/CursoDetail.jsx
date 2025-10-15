@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { supabase } from "../../../../../MisticayMundan_Server/supabaseClient";
+import { supabase } from "../../../../supabaseClient";
 
 const CursoDetail = () => {
   const { id } = useParams();

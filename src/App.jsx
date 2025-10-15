@@ -9,7 +9,7 @@ import CursoDetail from "./components/Home/cursoDetail/CursoDetail";
 
 import { useAuthStore } from "./store/useAuthStore";
 
-import { supabase } from "../../MisticayMundan_Server/supabaseClient";
+import { supabase } from "../supabaseClient";
 
 import './App.css';
 
