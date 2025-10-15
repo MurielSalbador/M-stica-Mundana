@@ -16,31 +16,30 @@ export default function Login() {
   const location = useLocation();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) {
-      setError(error.message);
-      return;
-    }
+  e.preventDefault();
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) {
+    setError(error.message);
+    return;
+  }
 
-    const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user } } = await supabase.auth.getUser();
 
-    if (user) {
-     const { data: profile, error: profileError } = await supabase
-  .from("users")
-  .select("*")
-  .eq("id", user.id)
-  .maybeSingle(); // 👈 no da error 406 si no existe
+  if (user) {
+    const { data: profile, error: profileError } = await supabase
+      .from("users")
+      .select("*")
+      .eq("id", user.id)
+      .maybeSingle();
 
-console.log("Perfil completo:", profile, profileError);
+    setUser(profile);
+    localStorage.setItem("user", JSON.stringify(profile));
 
-      setUser(profile);
-      localStorage.setItem("user", JSON.stringify(profile));
+    // ✨ Después de actualizar el estado, navegamos
+    navigate("/");
+  }
+};
 
-      alert("Sesión iniciada correctamente 🧘‍♀️");
-      navigate("/");
-    }
-  };
 
  const handleClose = () => {
     navigate(location.state?.from || "/");

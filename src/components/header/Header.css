@@ -32,6 +32,64 @@
 }
 
 /* ==== LINKS ==== */
+.nav-links .dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Botón principal */
+.nav-links .dropdown > a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.nav-links .dropdown > a:hover {
+  color: #c99458; /* color al pasar el mouse */
+}
+
+/* Menú desplegable */
+.nav-links .dropdown-menu {
+  background-color: #fff;
+  min-width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Cuando está abierto */
+.nav-links .dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Items del menú */
+.nav-links .dropdown-menu li {
+  list-style: none;
+}
+
+.nav-links .dropdown-menu li button {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-links .dropdown-menu li button:hover {
+  background-color: #f0f0ff; /* hover sutil */
+  color: #6e3b11;
+  border-radius: 4px;
+}
+
 .nav-links {
   display: flex;
   gap: 25px;
@@ -238,6 +296,7 @@
 .mobile-login {
   display: none;
 }
+
 
 
 /* ==== MOBILE MENU ==== */

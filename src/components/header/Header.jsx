@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+
 import { supabase } from "../../../supabaseClient";
 import { useAuthStore } from "../../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
+
 import "./Header.css";
+
 import avatarImg from "../../assets/LogoCaracol.png";
 
 const Header = () => {
@@ -12,6 +15,9 @@ const Header = () => {
 
   const [showCourses, setShowCourses] = useState(false);
   const [showAvatarMenu, setShowAvatarMenu] = useState(false);
+
+   const [courses, setCourses] = useState([]);
+
 
   const user = useAuthStore((state) => state.user);
   const setUser = useAuthStore((state) => state.setUser);
@@ -42,6 +48,15 @@ const Header = () => {
     navigate("/"); // volver al home
   };
 
+    useEffect(() => {
+    const fetchCourses = async () => {
+      const { data, error } = await supabase.from("courses").select("*");
+      if (error) console.error(error);
+      else setCourses(data);
+    };
+    fetchCourses();
+  }, []);
+
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <nav className="nav-container">
@@ -62,25 +77,20 @@ const Header = () => {
         </div>
 
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <li className="dropdown" onClick={() => setShowCourses(!showCourses)}>
-            <a href="#">Cursos ▾</a>
-            {showCourses && (
-              <ul className="dropdown-menu">
-                <li>
-                  <a href="#">Yoga Integral</a>
-                </li>
-                <li>
-                  <a href="#">Meditación Guiada</a>
-                </li>
-                <li>
-                  <a href="#">Yoga para Principiantes</a>
-                </li>
-                <li>
-                  <a href="#">Respiración Consciente</a>
-                </li>
-              </ul>
-            )}
-          </li>
+         <li className="dropdown" onClick={() => setShowCourses(!showCourses)}>
+      <a href="#">Cursos ▾</a>
+      {showCourses && (
+        <ul className="dropdown-menu">
+          {courses.map((course) => (
+            <li key={course.id}>
+              <button onClick={() => navigate(`/curso/${course.id}`)}>
+                {course.title}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
 
           <li>
             <a href="#">Membresías</a>
