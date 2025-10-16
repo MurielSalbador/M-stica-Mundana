@@ -9,16 +9,13 @@ font-family: 'Quicksand', sans-serif;
   min-height: 100vh;
 }
 
-.auth-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
+.auth-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
-  animation: fadeIn 0.3s ease;
+  min-height: 100vh;
+  background: #f5f3f0; /* color suave o imagen */
+  padding: 2rem;
 }
 
 .glass {

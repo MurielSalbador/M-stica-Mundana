@@ -7,6 +7,7 @@
   color: #3a2e1f;
   background: linear-gradient(to bottom, #fdfaf6 0%, #f4efe8 100%);
   overflow-x: hidden; /* Evita desplazamiento horizontal */
+  overflow-y: hidden;
 }
 
 /* HERO */
@@ -250,7 +251,6 @@
   position: relative;
   overflow: hidden;
   background-color: #e6d3ae;
-  border-radius: 5%;
   
 }
 
@@ -304,7 +304,7 @@
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-direction: column !important; /* fuerza columna aunque tu JSX tenga left/right */
+  flex-direction: column !important; 
 }
 
 .course-image-wrapper,
@@ -350,8 +350,13 @@
 }
 
 .course-info {
-  padding: 25px 20px 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 25px;
   background: #fff;
+  height: 100%;
 }
 
 .course-info h3 {
@@ -421,7 +426,6 @@
   animation: floatGlow 10s ease-in-out infinite;
 }
 
-
 /* mantiene márgenes uniformes */
 .course-card.left .course-info,
 .course-card.right .course-info {
@@ -430,8 +434,6 @@
 .course-card:hover .course-image-wrapper img {
   transform: scale(1.05);
 }
-
-
 
 @keyframes floatMoon {
   0%, 100% {
@@ -449,6 +451,212 @@
 .course-image-wrapper::after {
   pointer-events: none;
 }
+
+.membresia-container{
+  padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ece5d7;
+ }
+
+ /* Contenedor invisible que genera los destellos */
+.membresia-container::before,
+.membresia-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: flotarDestello 8s ease-in-out infinite;
+}
+
+/* Destellos principales */
+.membresia-container::before {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(252, 252, 244, 0.9) 0%, transparent 70%);
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.membresia-container::after {
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle, rgba(255, 249, 233, 0.8) 0%, transparent 80%);
+  bottom: 25%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+/* Varios destellos adicionales */
+.membresia-container .destello {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 252, 0.9) 0%, transparent 70%);
+  box-shadow: 0 0 8px rgba(255, 255, 220, 0.7);
+  width: 15px;
+  height: 15px;
+  opacity: 0.8;
+  animation: flotarDestello 6s ease-in-out infinite;
+}
+
+/* Animación de movimiento lento y suave */
+@keyframes flotarDestello {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px) scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.8;
+  }
+}
+
+.membership {
+  padding: 120px 20px;
+  background-color: #f3e8d2;
+  text-align: center;
+}
+
+.membership-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #4a3a28;
+  letter-spacing: 1px;
+  margin-bottom: 80px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.membership-container {
+  display: flex;
+  justify-content: center;
+}
+
+.membership-card {
+  width: 360px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.membership-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.membership-image {
+  height: 240px;
+  overflow: hidden;
+}
+
+.membership-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.membership-card:hover .membership-image img {
+  transform: scale(1.05);
+}
+
+.membership-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 30px 24px;
+}
+
+.membership-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: #3a2e1f;
+  margin-bottom: 15px;
+}
+
+.membership-info p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+  color: #5c5144;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.membership-info button {
+  background: transparent;
+  border: 1.5px solid #3a2e1f;
+  padding: 10px 26px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.membership-info button:hover {
+  background: #3a2e1f;
+  color: #fff;
+}
+
+/* Página individual de membresía */
+.membership-page {
+  padding: 100px 20px;
+  text-align: center;
+  background: #f9f6f1;
+}
+
+.membership-header img {
+  max-width: 480px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.membership-header h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  color: #4a3a28;
+  margin-bottom: 40px;
+}
+
+.membership-description {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.membership-price {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.membership-price span {
+  font-size: 1.6rem;
+  color: #3a2e1f;
+  font-family: "Cormorant Garamond", serif;
+}
+
+
+
+
 
 /* ===================== */
 /*   RESPONSIVE DESIGN   */
@@ -469,6 +677,28 @@
   .hero-title {
     font-size: 2.4rem;
   }
+
+  .courses::before,
+  .courses::after {
+    width: 180px;
+    height: 180px;
+    filter: blur(30px);
+  }
+
+  .course-card::before {
+    width: 280px;
+    height: 280px;
+    right: 3%;
+  }
+
+  .course-image-wrapper::before {
+    width: 120px;
+    height: 120px;
+    top: -40px;
+    left: -20px;
+  }
+
+  
 }
 
 @media (max-width: 768px) {
@@ -509,6 +739,52 @@
   .text-block img {
     margin: 0 auto;
     width: 50px;
+  }
+
+    .courses::before,
+  .courses::after {
+    width: 120px;
+    height: 120px;
+    filter: blur(20px);
+    top: 5%;
+    left: 5%;
+  }
+
+  .course-card::before {
+    width: 200px;
+    height: 200px;
+    right: 2%;
+  }
+
+  .course-image-wrapper::before {
+    width: 80px;
+    height: 80px;
+    top: -20px;
+    left: -10px;
+  }
+
+  .destello {
+    width: 4px;
+    height: 4px;
+  }
+
+  .membresia-container::before {
+    width: 12px;
+    height: 12px;
+    top: 15%;
+    left: 10%;
+  }
+
+  .membresia-container::after {
+    width: 20px;
+    height: 20px;
+    bottom: 15%;
+    right: 10%;
+  }
+
+  .membresia-container .destello {
+    width: 8px;
+    height: 8px;
   }
 }
 
@@ -566,5 +842,51 @@
 
   .courses{
     border-radius: 0%;
+  }
+
+  .courses::before,
+  .courses::after {
+    width: 80px;
+    height: 80px;
+    filter: blur(15px);
+    top: 5%;
+    left: 10%;
+  }
+
+  .course-card::before {
+    width: 150px;
+    height: 150px;
+    right: 1%;
+  }
+
+  .course-image-wrapper::before {
+    width: 60px;
+    height: 60px;
+    top: -15px;
+    left: -5px;
+  }
+
+  .destello {
+    width: 3px;
+    height: 3px;
+  }
+
+  .membresia-container::before {
+    width: 8px;
+    height: 8px;
+    top: 10%;
+    left: 5%;
+  }
+
+  .membresia-container::after {
+    width: 12px;
+    height: 12px;
+    bottom: 10%;
+    right: 5%;
+  }
+
+  .membresia-container .destello {
+    width: 5px;
+    height: 5px;
   }
 }

@@ -1,43 +1,57 @@
 import "./Home.css";
-import "aos/dist/aos.css"; // Importa los estilos de AOS
+import "aos/dist/aos.css";
 import AOS from "aos";
 
 import { useEffect, useState } from "react";
 import { supabase } from "../../../supabaseClient";
 import { useNavigate } from "react-router-dom";
 
-
 import LogoCaracol from "../../assets/LogoCaracol.png";
 import fotoMica from "../../assets/micaela.jpg";
 
 const Home = () => {
-    const [courses, setCourses] = useState([]);
-const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
+  const [membership, setMembership] = useState(null);
+  const navigate = useNavigate();
 
+  // 🔹 Obtener cursos
+  useEffect(() => {
+    const fetchCourses = async () => {
+      const { data, error } = await supabase.from("courses").select("*");
+      if (error) {
+        console.error("Error cargando cursos:", error);
+      } else {
+        setCourses(data);
+      }
+    };
+    fetchCourses();
+  }, []);
 
+  // 🔹 Obtener membresía activa
+  useEffect(() => {
+    const fetchMembership = async () => {
+      const { data, error } = await supabase
+        .from("memberships")
+        .select("*")
+        .eq("is_active", true)
+        .single(); // solo hay una membresía activa
 
-useEffect(() => {
-  const fetchCourses = async () => {
-    const { data, error } = await supabase.from("courses").select("*");
-    if (error) {
-      console.error(error);
-    } else {
-      setCourses(data);
-    }
+      if (error) {
+        console.error("Error cargando membresía:", error);
+      } else {
+        setMembership(data);
+      }
+    };
+    fetchMembership();
+  }, []);
 
-console.log("Error:", error);
-console.log("Data:", data);
-  };
-
-  fetchCourses();
-}, []);
+  // 🔹 Inicializar AOS
   useEffect(() => {
     AOS.init({
       duration: 1200,
       easing: "ease-in-out",
       once: true,
     });
-    console.log("✅ AOS inicializado");
   }, []);
 
   return (
@@ -138,32 +152,67 @@ console.log("Data:", data);
         </div>
       </section>
 
+      {/* CURSOS ONLINE */}
       <section className="courses" data-aos="fade-up">
-  <h2 className="courses-title">Cursos online</h2>
-  <div className="courses-container">
-    {courses.map((course, index) => (
-      <div
-        key={course.id}
-        className={`course-card ${index % 2 === 0 ? "left" : "right"}`}
-        data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-      >
-        <div className="course-image-wrapper">
-          <img src={course.image_url} alt={course.title} />
-        </div>
+        <h2 className="courses-title">Cursos online</h2>
+        <div className="courses-container">
+          {courses.map((course, index) => (
+            <div
+              key={course.id}
+              className={`course-card ${index % 2 === 0 ? "left" : "right"}`}
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            >
+              <div className="course-image-wrapper">
+                <img src={course.image_url} alt={course.title} />
+              </div>
 
-        <div className="course-info">
-          <h3>{course.title}</h3>
-          <p>{course.description}</p>
-          <button onClick={() => navigate(`/curso/${course.id}`)}>
-            Más info
-          </button>
+              <div className="course-info">
+                <h3>{course.title}</h3>
+                <p>{course.description}</p>
+                <button onClick={() => navigate(`/curso/${course.id}`)}>
+                 Ver más
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
+      </section>
+
+      {/* MEMBRESÍA INTUICIÓN */}
+      {membership && (
+        <section className="membresia-container" data-aos="fade-up">
+  <div className="destello" style={{ top: "10%", left: "30%", animationDelay: "0s" }}></div>
+  <div className="destello" style={{ top: "60%", left: "20%", animationDelay: "1s" }}></div>
+  <div className="destello" style={{ top: "40%", left: "70%", animationDelay: "2s" }}></div>
+  <div className="destello" style={{ top: "80%", left: "50%", animationDelay: "3s" }}></div>
+    <div className="destello" style={{ top: "30%", left: "20%", animationDelay: "0s" }}></div>
+  <div className="destello" style={{ top: "80%", left: "20%", animationDelay: "1s" }}></div>
+  <div className="destello" style={{ top: "80%", left: "70%", animationDelay: "2s" }}></div>
+  <div className="destello" style={{ top: "40%", left: "50%", animationDelay: "3s" }}></div>
+  
+  <h2 className="courses-title">Membresía online</h2>
+  <div className="courses-container">
+    <div
+      className="course-card left"
+      onClick={() => navigate("/membresia")}
+      data-aos="fade-right"
+    >
+      <div className="course-image-wrapper">
+        <img
+          src={membership.image_url}
+          alt={membership.title}
+          className="membership-image"
+        />
       </div>
-    ))}
+      <div className="course-info">
+        <h3>{membership.title}</h3>
+        <p>{membership.description}</p>
+        <button>Ver más</button>
+      </div>
+    </div>
   </div>
 </section>
-
-
+      )}
     </div>
   );
 };

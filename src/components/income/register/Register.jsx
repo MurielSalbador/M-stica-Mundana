@@ -51,7 +51,7 @@ export default function Register({ onClose }) {
   };
 
   return (
-    <div className="auth-overlay">
+    <div className="auth-page">
       <div className="auth-card">
         <button className="auth-close" onClick={handleClose}>
           ✕
