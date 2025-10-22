@@ -1,11 +1,13 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+
 import Header from "./components/header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/income/Login/Login";
 import Register from "./components/income/register/Register";
 import CursoDetail from "./components/Home/cursoDetail/CursoDetail";
 import MemberDetail from "./components/Home/memberDetail/MemberDetail";
+import CheckoutMembership from "./components/Home/memberDetail/checkoutMembership/CheckoutMembership";
 
 
 import { useAuthStore } from "./store/useAuthStore";
@@ -73,6 +75,7 @@ function AppContent() {
         <Route path="/register" element={<Register />} />
         <Route path="/curso/:id" element={<CursoDetail />} />
          <Route path="/membresia" element={<MemberDetail />} />
+         <Route path="/checkout/:id" element={<CheckoutMembership />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>

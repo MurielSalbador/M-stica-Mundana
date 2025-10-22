@@ -1,0 +1,423 @@
+.yoga-container {
+  font-family: "Lora", serif;
+  color: #3b2e26;
+  background: #fff;
+  line-height: 1.7;
+}
+
+/* ===== HERO ===== */
+.yoga-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.yoga-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.yoga-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1));
+  padding: 2rem;
+}
+
+.yoga-title {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.yoga-subtitle {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin-top: 1rem;
+}
+
+/* ===== BODY ===== */
+.yoga-body {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+/* ===== INTRO CON GRID ===== */
+.yoga-intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 🔸 tarjetas estrechas */
+  gap: 5rem 6rem; /* 🔸 más espacio entre ellas */
+  margin-bottom: 6rem;
+  justify-items: center;
+}
+
+.yoga-intro h2 {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+.yoga-intro p {
+  background: #f9f6f2;
+  border-radius: 18px;
+  padding: 3.5rem 2rem 3rem;
+  box-shadow: 0 8px 30px rgba(59, 46, 38, 0.08);
+  border: 1px solid rgba(59, 46, 38, 0.1);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  width: 90%; /* 🔸 las mantiene más finas */
+  max-width: 320px; /* 🔸 no se ensanchan demasiado */
+  min-height: 400px;
+  position: relative;
+}
+
+/* 🔸 Pequeño efecto escalonado (orgánico) */
+.yoga-intro p:nth-child(3) {
+  transform: translateY(40px);
+}
+.yoga-intro p:nth-child(4) {
+  transform: translateY(-30px);
+}
+
+/* 🔸 Hover */
+.yoga-intro p:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 35px rgba(59, 46, 38, 0.15);
+  background: linear-gradient(180deg, #f9f6f2 0%, #f3ece6 100%);
+}
+
+/* ===== IMAGE LARGA ===== */
+.yoga-image {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.yoga-secondary-img {
+  width: 100%;
+  height: 110vh;
+  object-fit: cover;
+  object-position: bottom; 
+  filter: brightness(80%);
+}
+
+/* ===== DETAILS & PRICE ===== */
+.yoga-details,
+.yoga-price {
+  margin: 3rem 0;
+}
+
+.yoga-details h3,
+.yoga-price h3 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== BUTTON ===== */
+.yoga-btn {
+  background: transparent;
+  border: 1px solid #3b2e26;
+  color: #3b2e26;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.yoga-btn:hover {
+  background: #3b2e26;
+  color: #fff;
+}
+
+/* ===== SÍMBOLOS ESPIRITUALES ===== */
+.symbol {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1.5rem auto;
+  opacity: 0.8;
+  filter: invert(30%) sepia(8%) saturate(500%) hue-rotate(345deg)
+    brightness(90%) contrast(90%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.symbol:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* ===== NUEVO ESTILO DE BLOQUES ===== */
+.yoga-intro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+.yoga-intro h2 {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+.yoga-intro p {
+  background: #f9f6f2;
+  border-radius: 18px;
+  padding: 3.5rem 2rem 3rem;
+  box-shadow: 0 8px 30px rgba(59, 46, 38, 0.08);
+  border: 1px solid rgba(59, 46, 38, 0.1);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  min-height: 420px;
+}
+
+.yoga-intro p:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 35px rgba(59, 46, 38, 0.15);
+  background: linear-gradient(180deg, #f9f6f2 0%, #f3ece6 100%);
+}
+
+@media (max-width: 1024px) {
+  .yoga-intro {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .yoga-intro {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== SYMBOLS ===== */
+.yoga-symbols {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.symbol-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.symbol-item img {
+  width: 60px;
+  height: 60px;
+  opacity: 0.85;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(28%) sepia(12%) saturate(650%) hue-rotate(347deg) brightness(90%) contrast(86%);
+}
+
+.symbol-item img:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.symbol-line {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(186,155,85,0.6) 0%, rgba(218,189,120,0.9) 50%, rgba(186,155,85,0.6) 100%);
+  border-radius: 4px;
+}
+
+/* ===================== */
+/*      YOGA DETAILS     */
+/* ===================== */
+
+.yoga-details,
+.yoga-price {
+  position: relative;
+  background: #fffdfa;
+  border-radius: 18px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  padding: 40px 35px;
+  margin: 40px auto;
+  max-width: 480px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  color: #3a2e1f;
+  overflow: hidden;
+}
+
+/* 🔸 Titulares */
+.yoga-details h3,
+.yoga-price h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #4a3a28;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* Emoji decorativo */
+.yoga-details h3::after {
+  content: "🪷";
+  position: absolute;
+  top: -8px;
+  right: -28px;
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+.yoga-price h3::after {
+  content: "✨";
+  position: absolute;
+  top: -8px;
+  right: -25px;
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+/* Texto */
+.yoga-details p,
+.yoga-price p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  padding: 15px 20px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+/* Botón */
+.yoga-btn {
+  background: linear-gradient(135deg, #d4c2a6, #bba782);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 36px;
+  font-family: "Cormorant Garamond", serif;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 18px rgba(90, 80, 50, 0.3);
+}
+
+.yoga-btn:hover {
+  background: linear-gradient(135deg, #c8b58e, #a59574);
+  box-shadow: 0 0 20px rgba(180, 160, 120, 0.5);
+  transform: translateY(-3px);
+}
+
+/* 🔸 Partículas flotantes suaves */
+.yoga-details::before,
+.yoga-details::after,
+.yoga-price::before,
+.yoga-price::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, rgba(250, 245, 230, 0.9) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatParticle 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Partículas en distintas posiciones */
+.yoga-details::before { top: 10%; left: 15%; animation-delay: 1s; }
+.yoga-details::after { bottom: 15%; right: 20%; animation-delay: 2s; }
+.yoga-price::before { top: 20%; right: 10%; animation-delay: 3s; }
+.yoga-price::after { bottom: 20%; left: 10%; animation-delay: 0s; }
+
+/* Animación de flotación */
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-25px) translateX(15px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .yoga-details,
+  .yoga-price {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .yoga-btn {
+    font-size: 1.1rem;
+    padding: 10px 28px;
+  }
+
+  .yoga-details h3,
+  .yoga-price h3 {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .yoga-intro {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .yoga-title {
+    font-size: 2rem;
+  }
+
+  .yoga-subtitle {
+    font-size: 1rem;
+  }
+
+  .yoga-intro {
+    grid-template-columns: 1fr; 
+  }
+
+  .yoga-secondary-img {
+    height: 40vh;
+    object-position: bottom; 
+  }
+}
+
+
+
