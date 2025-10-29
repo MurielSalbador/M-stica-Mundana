@@ -4,7 +4,7 @@ import { supabase } from "../../../../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../../../store/useAuthStore";
 import Swal from "sweetalert2";
-import MujeryLobo from "../../../assets/mujerYlobo.jpg";
+import MujeryLobo from "../../../assets/MujeryLobo.jpg";
 import "./MemberDetail.css";
 
 const MemberDetail = () => {
